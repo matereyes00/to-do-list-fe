@@ -1,22 +1,20 @@
-import { useState } from 'react'
+import React from 'react'
 import './App.css'
+import Welcome from './WelcomePage/welcome'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const App = () => {
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1 className='text-sm'>To Do List App</h1>
-      <div className='block bg-red-300 border-white'>
-        <label htmlFor="username">
-          <h2>Username</h2>
-          <input type="text" name='username'/>
-        </label>
-        <label htmlFor="password">
-          <h2>Password</h2>
-          <input type="text" name='password'/>
-          </label>
-        <button type='submit'>Login</button>
+      <div className='flex flex-row justify-center w-full mt-80 mx-auto border-2'>
+        <div>
+          <h1 className='my-auto mx-auto'>To Do List App</h1>
+        </div>
+        <div className='my-auto mx-auto'>
+          <Welcome className=""/>
+        </div>
       </div>
     </>
   )
