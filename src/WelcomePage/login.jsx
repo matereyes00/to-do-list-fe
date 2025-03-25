@@ -10,7 +10,7 @@ const login = () => {
     return (
         <>
             <h1>login</h1>
-            <form action="" className="mx-auto border-2 border-red-900">
+            <form action="" className="mx-auto border-2 p-4 w-3/4">
                 <label htmlFor="username" className="flex flex-row gap-3">
                     Username
                     <input type="text" placeholder="username"/>
