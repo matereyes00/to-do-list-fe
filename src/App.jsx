@@ -1,23 +1,34 @@
 import React from 'react'
 import './App.css'
+import { BrowserRouter as Router, Routes, Route,Link } from "react-router";
 import Welcome from './WelcomePage/welcome'
-
+import Login from './WelcomePage/login'
+import SignUp from './WelcomePage/signUp'
+import Layout from './common/layout'
+import ListBase from './Lists/list-base'
 
 const App = () => {
-  // const [count, setCount] = useState(0)
-
+  
   return (
-    <>
-      <div className='flex flex-row justify-center w-full mt-80 mx-auto border-2'>
-        <div>
-          <h1 className='my-auto mx-auto'>To Do List App</h1>
-        </div>
-        <div className='my-auto mx-auto'>
-          <Welcome className=""/>
-        </div>
-      </div>
-    </>
-  )
+    <Router>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/list-index">Lists</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes> {/* Use Routes instead of Switch */}
+          <Route path="/list-index" element={<ListBase />} />   {/* Use element prop */}
+          <Route path="/login" element={<Login />} />   {/* Use element prop */}
+          <Route path="/signup" element={<SignUp />} />   {/* Use element prop */}
+          <Route index element={<Welcome />} />      {/* Use element prop */}
+          <Route path='/' element={<Layout />} />      {/* Use element prop */}
+        </Routes>
+
+      </Router>
+  );
 }
 
 export default App
